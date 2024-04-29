@@ -12,3 +12,11 @@ class TestBaudotEncryption(unittest.TestCase):
         self.assertEqual(char_to_baudot('A'), '00011')
         self.assertEqual(char_to_baudot(' '), '00000')
         self.assertEqual(char_to_baudot('1'), '')  # Invalid characters
+
+   # test 2nd function
+    def test_baudot_to_char(self):
+        # Test Baudot code to character conversion
+        self.assertEqual(baudot_to_char('00011'), 'A')
+        self.assertEqual(baudot_to_char('00000'), ' ')
+        self.assertEqual(baudot_to_char('11000'), 'V')
+        self.assertEqual(baudot_to_char('11111'), '')  # Invalid Baudot code
