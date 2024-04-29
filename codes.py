@@ -16,3 +16,12 @@ def baudot_to_char(baudot):   # define function for baudot to char
     }
     return baudot_code.get(baudot, '')  # empty string for baudot codes
 
+def encrypt_phrase(phrase):   #  encrypt the text
+    encrypted = ''
+    for char in phrase:
+        encrypted_char = char_to_baudot(char)
+        if encrypted_char:  # a char not found in the dictionary
+            encrypted += encrypted_char + ' '
+        else:
+            encrypted += '[try again] '
+    return encrypted.strip()
