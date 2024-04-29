@@ -28,3 +28,6 @@ class TestBaudotEncryption(unittest.TestCase):
         encrypted_message = encrypt_phrase(message)
         decrypted_message = decrypt_phrase(encrypted_message)
         self.assertEqual(decrypted_message, message)
+
+if __name__ == '__main__':
+    unittest.main()
