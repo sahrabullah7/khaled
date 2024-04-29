@@ -36,3 +36,13 @@ def decrypt_phrase(encrypted):  # decrypt the encrypted text
         else:
             decrypted += '[try again]'
     return decrypted
+
+
+# Input a message to encrypt
+message = input("Enter a message to encrypt: ")
+encrypted_message = encrypt_phrase(message)  # calling the encryption function
+print("Encrypted:", encrypted_message)
+
+# Decrypt the encrypted message
+decrypted_message = decrypt_phrase(encrypted_message)   # calling the decryption function
+print("Decrypted:", decrypted_message)
