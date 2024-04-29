@@ -6,3 +6,13 @@ def char_to_baudot(char):  # define function for char to baudot
         'U': '11100', 'V': '11000', 'W': '01111', 'X': '10101', 'Y': '01010', 'Z': '10001'
     }
     return baudot_code.get(char.upper(), '')  # empty string for characters/ uppercase to char/ (.get) gets the value of the key
+
+def baudot_to_char(baudot):   # define function for baudot to char
+    baudot_code = {  # dictionary
+        '00000': ' ', '00011': 'A', '11010': 'B', '10010': 'C', '10100': 'D', '01000': 'E', '11001': 'F',
+        '10110': 'G', '01101': 'H', '00110': 'I', '11110': 'J', '11011': 'K', '00101': 'L', '10011': 'M',
+        '10000': 'N', '01110': 'O', '11101': 'P', '10111': 'Q', '01011': 'R', '01100': 'S', '00100': 'T',
+        '11100': 'U', '11000': 'V', '01111': 'W', '10101': 'X', '01010': 'Y', '10001': 'Z'
+    }
+    return baudot_code.get(baudot, '')  # empty string for baudot codes
+
