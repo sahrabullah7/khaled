@@ -25,3 +25,14 @@ def encrypt_phrase(phrase):   #  encrypt the text
         else:
             encrypted += '[try again] '
     return encrypted.strip()
+
+def decrypt_phrase(encrypted):  # decrypt the encrypted text
+    decrypted = ''
+    baudot_list = encrypted.split() # get the massage and split it into seperate words 
+    for baudot in baudot_list:
+        decrypted_char = baudot_to_char(baudot)
+        if decrypted_char: # a char not found in the dictionary
+            decrypted += decrypted_char
+        else:
+            decrypted += '[try again]'
+    return decrypted
