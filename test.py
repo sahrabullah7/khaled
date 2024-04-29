@@ -20,3 +20,11 @@ class TestBaudotEncryption(unittest.TestCase):
         self.assertEqual(baudot_to_char('00000'), ' ')
         self.assertEqual(baudot_to_char('11000'), 'V')
         self.assertEqual(baudot_to_char('11111'), '')  # Invalid Baudot code
+
+    # encryption / decryption function
+    def test_encrypt_decrypt(self):
+        # Test encryption and decryption of a message
+        message = "HELLO WORLD"
+        encrypted_message = encrypt_phrase(message)
+        decrypted_message = decrypt_phrase(encrypted_message)
+        self.assertEqual(decrypted_message, message)
